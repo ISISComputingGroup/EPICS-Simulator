@@ -1,0 +1,148 @@
+##BOOLEAN STUFF
+
+record(bi, "$(P)BOOL:SIMVALUE")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn(booleansimulator,0,0)BOOLEAN_VALUE")
+   field(SCAN, "I/O Intr")
+   field(ZNAM, "FALSE")
+   field(ONAM, "TRUE")
+   field(FLNK, "$(P)BOOL:VALUE")
+}
+
+record(ao, "$(P)BOOL:UPDATERATE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn(booleansimulator,0,0)BOOLEAN_UPDATEPERIOD")
+}
+
+record(ao, "$(P)BOOL:UPDATERATENOISE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn(booleansimulator,0,0)BOOLEAN_UPDATEPERIODNOISE")
+}
+
+record(bi,"$(P)BOOL:SET_SIM") {
+    field(VAL, 1)
+    field(ZNAM, "Sim mode off")
+    field(ONAM, "Sim mode on")
+    field(FLNK, "$(P)BOOL:VALUE")
+}
+
+record(bi, "$(P)BOOL:VALUE")
+{
+    field(SIOL, "$(P)BOOL:SIMVALUE PP")
+    field(SIML,"$(P)BOOL:SET_SIM")
+    field(ZNAM, "FALSE")
+    field(ONAM, "TRUE")
+}
+
+##TRAFFIC LIGHT STUFF
+
+record(ai, "$(P)TLIGHT:SIMVALUE")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn(trafficlightsimulator,0,0)TRAFFICLIGHT_VALUE")
+   field(SCAN, "I/O Intr")
+   field(FLNK, "$(P)TLIGHT:VALUE")
+}
+
+record(ao, "$(P)TLIGHT:UPDATERATE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn(trafficlightsimulator,0,0)TRAFFICLIGHT_UPDATEPERIOD")
+}
+
+record(ao, "$(P)TLIGHT:UPDATERATENOISE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn(trafficlightsimulator,0,0)TRAFFICLIGHT_UPDATEPERIODNOISE")
+}
+
+record(bi,"$(P)TLIGHT:SET_SIM") {
+    field(VAL, 1)
+    field(ZNAM, "Sim mode off")
+    field(ONAM, "Sim mode on")
+    field(FLNK, "$(P)TLIGHT:VALUE")
+}
+
+record(mbbi, "$(P)TLIGHT:VALUE")
+{
+    field(SIOL, "$(P)TLIGHT:SIMVALUE PP")
+    field(SIML, "$(P)TLIGHT:SET_SIM")
+    field(ZRST, "RED")
+    field(ONST, "AMBER")
+    field(TWST, "GREEN")
+}
+
+##SINE WAVE STUFF
+
+record(ai, "$(P)SINE:VALUE")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn(sinewavesimulator,0,0)SINEWAVE_VALUE")
+   field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)SINE:UPDATERATE")
+{
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn(sinewavesimulator,0,0)SINEWAVE_UPDATEPERIOD")
+}
+
+record(ao, "$(P)SINE:DELTA")
+{
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn(sinewavesimulator,0,0)SINEWAVE_DELTA")
+}
+
+##SQUARE WAVE STUFF
+
+record(ai, "$(P)SQUARE:VALUE")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn(squarewavesimulator,0,0)SQUAREWAVE_VALUE")
+   field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)SQUARE:UPDATERATE")
+{
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn(squarewavesimulator,0,0)SQUAREWAVE_UPDATEPERIOD")
+}
+
+##TRIANGLE WAVE STUFF
+
+record(ai, "$(P)TRIANGLE:VALUE")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn(trianglewavesimulator,0,0)TRIANGLEWAVE_VALUE")
+   field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)TRIANGLE:UPDATERATE")
+{
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn(trianglewavesimulator,0,0)TRIANGLEWAVE_UPDATEPERIOD")
+}
+
+record(ao, "$(P)TRIANGLE:DELTA")
+{
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn(trianglewavesimulator,0,0)TRIANGLEWAVE_DELTA")
+}
+
+##RANDOM NUMBER STUFF
+
+record(ai, "$(P)RANDOM:VALUE")
+{
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn(randomnumbersimulator,0,0)RANDOMNUMBER_VALUE")
+   field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)RANDOM:UPDATERATE")
+{
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn(randomnumbersimulator,0,0)RANDOMNUMBER_UPDATEPERIOD")
+}

@@ -1,0 +1,8 @@
+include "base.dbd"
+include "asyn.dbd"
+registrar("BooleanSimulatorRegister")
+registrar("TrafficLightSimulatorRegister")
+registrar("SineWaveSimulatorRegister")
+registrar("SquareWaveSimulatorRegister")
+registrar("TriangleWaveSimulatorRegister")
+registrar("RandomNumberSimulatorRegister")
