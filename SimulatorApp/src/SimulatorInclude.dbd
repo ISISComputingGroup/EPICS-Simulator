@@ -1,5 +1,6 @@
 include "base.dbd"
 include "asyn.dbd"
+include "devIocStats.dbd"
 registrar("BooleanSimulatorRegister")
 registrar("TrafficLightSimulatorRegister")
 registrar("SineWaveSimulatorRegister")

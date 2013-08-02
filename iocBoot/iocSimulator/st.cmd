@@ -5,6 +5,9 @@
 
 < envPaths
 
+epicsEnvSet "IOCNAME" "$(P=$(MYPVPREFIX))SIM" 
+epicsEnvSet "IOCSTATS_DB" "$(DEVIOCSTATS)/db/iocAdminSoft.db" 
+
 cd ${TOP}
 
 ## Register all support components
@@ -19,7 +22,8 @@ TriangleWaveSimulatorConfigure("trianglewavesimulator")
 RandomNumberSimulatorConfigure("randomnumbersimulator")
 
 ## Load record instances
-dbLoadRecords("$(TOP)/db/Simulator.db","P=SIM:")
+dbLoadRecords("$(TOP)/db/Simulator.db","P=$(IOCNAME)")
+dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")  
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit

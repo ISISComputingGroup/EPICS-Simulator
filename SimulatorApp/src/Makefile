@@ -18,6 +18,10 @@ PROD_IOC = Simulator
 # Simulator.dbd will be created and installed
 DBD += Simulator.dbd
 
+Simulator_DBD += devIocStats.dbd
+
+Simulator_LIBS += devIocStats
+
 # Simulator_registerRecordDeviceDriver.cpp derives from BooleanSimulator.dbd
 Simulator_SRCS += Simulator_registerRecordDeviceDriver.cpp
 
