@@ -146,3 +146,8 @@ record(ao, "$(P)RANDOM:UPDATERATE")
    field(DTYP, "asynFloat64")
    field(OUT,  "@asyn(randomnumbersimulator,0,0)RANDOMNUMBER_UPDATEPERIOD")
 }
+
+record(stringin, "$(P)STRING")
+{
+    field(VAL, "Hello!")
+}
