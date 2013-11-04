@@ -23,7 +23,7 @@ RandomNumberSimulatorConfigure("randomnumbersimulator")
 
 ## Load record instances
 dbLoadRecords("$(TOP)/db/Simulator.db","P=$(IOCNAME)")
-dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")  
+#dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")  
 
 cd ${TOP}/iocBoot/${IOC}
 iocInit
