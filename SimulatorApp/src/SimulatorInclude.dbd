@@ -1,6 +1,3 @@
-registrar("BooleanSimulatorRegister")
-registrar("TrafficLightSimulatorRegister")
-registrar("SineWaveSimulatorRegister")
-registrar("SquareWaveSimulatorRegister")
-registrar("TriangleWaveSimulatorRegister")
-registrar("RandomNumberSimulatorRegister")
+include "base.dbd"
+include "SimulatorSupport.dbd"
+include "devIocStats.dbd"

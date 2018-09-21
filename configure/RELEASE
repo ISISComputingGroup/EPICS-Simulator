@@ -1,6 +1,7 @@
 # Local dependencies
 ASYN=$(SUPPORT)/asyn/master
 DEVIOCSTATS=$(SUPPORT)/devIocStats/master
+ONCRPC=$(SUPPORT)/oncrpc/master
 
 # optional extra local definitions here
 -include $(TOP)/configure/RELEASE.private
