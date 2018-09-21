@@ -1,19 +1,21 @@
-#!../../bin/windows-x64/Simulator
+#!../../bin/windows-x64/SimulatorTest
 
-## You may have to change Simulator to something else
+## You may have to change SimulatorTest to something else
 ## everywhere it appears in this file
+
+# Increase this if you get <<TRUNCATED>> or discarded messages warnings in your errlog output
+errlogInit2(65536, 256)
 
 < envPaths
 
 epicsEnvSet "IOCNAME" "$(P=$(MYPVPREFIX))SIMULATOR" 
 epicsEnvSet "IOCSTATS_DB" "$(DEVIOCSTATS)/db/iocAdminSoft.db" 
 
-cd ${TOP}
+cd "${TOP}"
 
 ## Register all support components
-dbLoadDatabase "dbd/Simulator.dbd"
-Simulator_registerRecordDeviceDriver pdbbase
-
+dbLoadDatabase "dbd/SimulatorTest.dbd"
+SimulatorTest_registerRecordDeviceDriver pdbbase
 BooleanSimulatorConfigure("booleansimulator")
 TrafficLightSimulatorConfigure("trafficlightsimulator")
 SineWaveSimulatorConfigure("sinewavesimulator")

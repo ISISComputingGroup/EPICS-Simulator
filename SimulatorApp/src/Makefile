@@ -14,28 +14,7 @@ SimulatorSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 #=============================
 # Build the IOC application
 
-PROD_IOC = Simulator
-# Simulator.dbd will be created and installed
-DBD += Simulator.dbd
-
-Simulator_DBD += devIocStats.dbd
-
-Simulator_LIBS += devIocStats
-
-# Simulator_registerRecordDeviceDriver.cpp derives from BooleanSimulator.dbd
-Simulator_SRCS += Simulator_registerRecordDeviceDriver.cpp
-
-# Build the main IOC entry point on workstation OSs.
-Simulator_SRCS_DEFAULT += SimulatorMain.cpp
-Simulator_SRCS_vxWorks += -nil-
-
-# Add support from base/src/vxWorks if needed
-#Simulator_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
-
-Simulator_LIBS += SimulatorSupport asyn
-
-# Finally link to the EPICS Base libraries
-Simulator_LIBS += $(EPICS_BASE_IOC_LIBS)
+DBD += SimulatorSupport.dbd
 
 #===========================
 
